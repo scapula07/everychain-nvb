@@ -35,4 +35,15 @@ Our dapp include the following features;
   
   Source code:
   1. [Messenger folder](https://github.com/scapula07/everychain-nvb/tree/master/src/pages/Messenger)
-  2. 
+  2. [Chats folder](https://github.com/scapula07/everychain-nvb/tree/master/src/components/Chats)
+
+The video messaging was implemented by uploading recorded webcam streams from the user to livepeer studio using the livepeer.js sdk. The Assest ID  is then passed or sent to the recipient address as string. 
+The video is played using the Livepeer player and assest ID .
+
+
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.03.02%20AM.png?alt=media&token=26db1974-7f00-4e75-8abd-74ced3acbac1)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.05.26%20AM.png?alt=media&token=be8e0d01-c910-48fb-acd3-ab5a216ed693)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.07.26%20AM.png?alt=media&token=56db46d3-5664-447c-8e0b-016d820b1c2c)
