@@ -37,6 +37,97 @@ Our dapp include the following features;
   1. [Messenger folder](https://github.com/scapula07/everychain-nvb/tree/master/src/pages/Messenger)
   2. [Chats folder](https://github.com/scapula07/everychain-nvb/tree/master/src/components/Chats)
 
+  ````js
+  
+          import { Client,NumberCodec,MediaCodec } from '@xmtp/xmtp-js'
+          import { Wallet } from 'ethers'
+          import { ethers } from 'ethers'
+          import {LivepeerConfig, createReactClient,studioProvider} from '@livepeer/react';
+
+
+          useEffect(()=>{
+
+              const initClient=async()=>{
+
+                  const provider = new ethers.providers.Web3Provider(window.ethereum)
+                  await provider.send("eth_requestAccounts", []);
+
+                  const newsigner = provider.getSigner()
+                  const xmtp = await Client.create(newsigner )
+                  console.log( xmtp,"xxxxx")
+                  setClient( xmtp )
+              }
+              initClient()
+            },[])
+
+          
+         const createConvservation=async()=>{
+              try{
+                const newConversation = await xtmpClient.conversations.newConversation(
+                    newAddr
+                   )
+                   setCurrentChat(newConversation)
+
+              }catch(e){
+                console.log(e)
+                toast(e.message)
+              }
+
+                setnewAddr("")
+               setTrigger(false)
+              }
+              
+         const sendMessage=async()=>{
+             try{
+              const res=await currentChat.send(msg)
+              setMessages([...messages,{content:msg}])
+               }catch(e){
+              console.log(e)
+               }
+
+            }
+            
+            
+                const startFunction=()=> {
+
+                        const constraints = { "video": { width: { max: 320 } }, "audio" : true };
+
+                          navigator.mediaDevices.getUserMedia(constraints)
+                            .then(gotMedia)
+                            .catch(e => { console.error('getUserMedia() failed: ' + e); });
+                      }
+
+              function download() {
+                theRecorder.stop();
+                theStream.getTracks().forEach(track => { track?.stop(); });
+
+                var blob = new Blob(recordedChunks, {type: "video/webm"});
+                const file=new File([blob],"videomsg.json")
+                setVideo(file )
+                createAsset?.();
+
+            
+
+              }
+
+               const {
+                mutate: createAsset,
+                data: asset,
+                status,
+                progress,
+                error,
+              } = useCreateAsset(
+                video
+                  ? {
+                      sources: [{ name: video.name, file: video }] 
+                    }
+                  : null,
+              );
+
+  
+  
+  ````
+
 The video messaging was implemented by uploading recorded webcam streams from the user to livepeer studio using the livepeer.js sdk. The Assest ID  is then passed or sent to the recipient address as string. 
 The video is played using the Livepeer player and assest ID .
 
