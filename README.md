@@ -288,7 +288,51 @@ Source code:
 
 Huddle sdk is use to implement the video conferencing feature in our community chat rooms.
 
-````
+Source Code
+   1.  [Livestream studio file](https://github.com/scapula07/everychain-nvb/tree/master/src/pages/Communities/VideoConference)
+
+````js
+
+    import { getHuddleClient } from '@huddle01/huddle01-client'; 
+    const huddleClient = getHuddleClient('fc15c10a21e40bcae23007ac07ea715a763844fbf07ae5df9c287d5cdeb9fdbf');
+    
+    const peersKeys = useHuddleStore((state) => Object.keys(state.peers));
+    const lobbyPeers = useHuddleStore((state) => state.lobbyPeers);
+    
+     const handleJoin = async () => {
+        try {
+          await huddleClient.join("dev", {
+            address: account,
+            wallet: "",
+            ens: ensName,
+          });
+    
+          console.log("joined");
+        } catch (error) {
+          console.log({ error });
+        }
+      };
+      
+      
+      const stream = useHuddleStore((state) => state.stream);
+      const isCamPaused = useHuddleStore((state) => state.isCamPaused);
+
+      const videoRef = useRef(null);
+
+      useEffect(() => {
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
+        console.log({ stream });
+      }, [stream]);
+      
+      <video
+          className="w-full"
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+      ></video>
 
 
 
