@@ -284,5 +284,14 @@ Source code:
 
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%201.37.42%20PM.png?alt=media&token=b2f2ffe6-6d20-4aa5-924c-a2c28c2e09ad)
 
+###  Video conferencing - Huddle sdk
 
+Huddle sdk is use to implement the video conferencing feature in our community chat rooms.
+
+````
+
+
+
+
+````
 
