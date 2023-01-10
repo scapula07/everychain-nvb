@@ -237,5 +237,43 @@ The Livestreaming can be done either using OBS with livepeer or huddle sdk with 
 
 Source code: 
  [Livestream studio file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/LivestreamsStudio/videoStream.js)
+ 
+ ````js
+    import { Player ,ThemeConfig,} from '@livepeer/react';
+    import { getHuddleClient } from '@huddle01/huddle01-client';
+    export const huddleClient = getHuddleClient('fc15c10a21e40bcae23007ac07ea715a763844fbf07ae5df9c287d5cdeb9fdbf');
+    
+     const [streamName, setStreamName] = useState('');
+       const {
+         mutate: createStream,
+         data: stream,
+         status,
+       } = useCreateStream({ name: streamName });
+    
+     const createLivestream=async()=>{
+        createStream?.();
+        await sleep(5000) 
+       console.log(stream?.playbackId)
+      }
+      
+      const createHuddleLiveStream=async ()=>{
+           try{
+            const streamHuddle=await huddleClient.startLiveStreaming({
+              platform: 'livepeer',
+              streamObj: {
+                streamLink: "rtmp://rtmp.livepeer.com/live",
+                streamKey: stream.streamKey,
+                streamName: stream.name
+              }
+              });
+            console.log(streamHuddle)
+             }catch(e){
+             console.log(e)
+           }
+
+
+          }
+ 
+ ````
 
 
