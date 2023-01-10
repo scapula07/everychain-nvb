@@ -138,3 +138,88 @@ The video is played using the Livepeer player and assest ID .
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.05.26%20AM.png?alt=media&token=be8e0d01-c910-48fb-acd3-ab5a216ed693)
 
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.07.26%20AM.png?alt=media&token=56db46d3-5664-447c-8e0b-016d820b1c2c)
+
+
+####   Video streaming -Livepeer,Arweave and Bundlr
+
+Video contents(blockchain related) can be streamed from Everychain after uploads .Content creators are incentivised by the platform for each uploads.
+This will provide more free learning courses or videos on Everychain.
+
+Source code:
+   1. [Uploader file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/Uploads/uploader.js)
+   2. [Video streaming file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/Home/streamVideoList.js)
+
+`````js
+     import { Player, useAssetMetrics, useCreateAsset } from '@livepeer/react';
+     import { parseArweaveTxId} from 'livepeer/media';
+     import { providers } from "ethers";
+     import { WebBundlr } from "@bundlr-network/client";
+     
+     const fileReaderStream = require('filereader-stream')
+     
+     
+     const [video, setVideo] = useState()
+     
+        const {
+        mutate: createAsset,
+        data: asset,
+        status,
+        progress,
+        error,
+      } = useCreateAsset(
+        video
+          ? {
+              sources: [{ name: video.name, file: video }] 
+            }
+          : null,
+      );
+
+      const { data: metrics } = useAssetMetrics({
+        assetId: asset?.[0].id,
+        refetchInterval: 30000,
+      });
+      
+      
+      
+          const uploadToArweave=async()=>{
+
+            try{
+                const provider = new providers.Web3Provider(window.ethereum);
+                await provider._ready();
+        
+                const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", provider,
+                {
+                  providerUrl: "https://polygon-mumbai.g.alchemy.com/v2/5-PAZiyQpRy1ouUxhD2vW3_KjGwxPRWi",
+              }
+                );
+                await bundlr.ready();
+        
+                const price = await bundlr.getPrice(video?.size);
+           
+                const funded= await bundlr.fund(price);
+                var readStream = fileReaderStream(video, [])
+              
+               const { id } = await bundlr.upload(readStream );
+              
+                console.log(`Data uploaded ==> https://arweave.net/${id}`);
+                  
+
+                  
+            }
+            catch(e){
+                console.log(e)
+                toast(e.message)
+            }
+        
+          }
+          
+              const idParsed =  parseArweaveTxId(vid.videoUrl)
+              
+                < Player 
+                     src={idParsed.url}
+                  />
+
+
+`````
+
+
