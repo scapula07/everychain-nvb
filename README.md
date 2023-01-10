@@ -398,6 +398,93 @@ Source Code
 
 
 
+###  NFT gated access -NFTport API
+
+For a user to gain access to a community chat room,  he/she must be in possesion or a owner of the everychain Access NFT(ANFT).
+The NFTport API is use to mint the access NFT token to each user .The API is also used top check for ownership or possession of the ANFT.
+
+Source code:
+1.   [roomAccess file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/Communities/roomAccess.js)
+2.   [room file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/Communities/Room.js)
+
+
+````js. 
+
+          
+             const mintNft=async()=>{
+              toast("Minting NFT")
+              const options = {
+                method: 'POST',
+                headers: {
+                  accept: 'application/json',
+                  'content-type': 'application/json',
+                  Authorization: '5ac96cad-d645-41cc-880f-1e85c554dd4a'
+                },
+                body: JSON.stringify({
+                  chain: 'goerli',
+                  contract_address: '0xbb01D6DA9D221609D102f413e5A444888798075c',
+                  metadata_uri: avater? avater :"https://i.redd.it/4iyd1x1xha681.jpg",
+                  mint_to_address:  account
+                })
+              };
+
+              fetch('https://api.nftport.xyz/v0/mints/customizable', options)
+                .then(response => response.json())
+                .then(response => {
+                  toast("NFT minted")
+                    setAccess(true)
+                    console.log(response)
+
+                })
+                .catch(err => console.error(err));
+
+            }
+
+
+
+
+
+
+
+              useEffect(()=>{
+
+             const checkForAccess=async()=>{
+                 const options = {
+                  method: 'GET',
+                 headers: {
+                 accept: 'application/json',
+                 Authorization: '5ac96cad-d645-41cc-880f-1e85c554dd4a'
+                 }
+               };
+
+           fetch(`https://api.nftport.xyz/v0/accounts/${account}?                chain=goerli&page_size=50&include=default&include=metadata&contract_address=0xbb01D6DA9D221609D102f413e5A444888798075c`, options)
+                .then(response => response.json())
+                .then(response => {
+
+                  console.log(response,"response")
+                  if(response.total >0 ){
+                    setAccess(true)
+                  }else{
+                    setCurrentRoom("access")
+                  }
+
+
+                })
+                .catch(err => console.error(err));
+
+            }
+
+
+             checkForAccess()
+       },[])
+
+
+
+
+````
+
+
+
 
 
 
