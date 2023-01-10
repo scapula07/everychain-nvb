@@ -29,7 +29,79 @@ Our dapp include the following features;
 
 ### Details on implementation of hackathon challanges 
 
-####   Direct video messenger or chats -XMTP pr0tocol and Livepeer player
+
+###   Integration of ENS service
+
+The Ethereum Name Service (ENS) is a distributed, open, and extensible naming system based on the Ethereum blockchain.
+
+We were able to integrate ENS into in our dapp using the Ethers js library to resolve ENS names and avaters.
+
+Source code:
+ 1. [Connect wallet file](https://github.com/scapula07/everychain-nvb/blob/master/src/components/ConnectWallet/index.js)
+
+
+
+
+````js
+ 
+             import { ethers } from 'ethers'
+         
+                const connectWallet=async()=>{
+                 
+                try{
+           
+                    const provider = new ethers.providers.Web3Provider(window.ethereum)
+          
+                    await provider.send("eth_requestAccounts", []);
+                    
+                     const newsigner = provider.getSigner()
+                    
+                   
+                   const account= await newsigner .getAddress()
+                 
+                     if(chainId ==="0x13881"){
+                       setAccount( account)
+                   }else if(chainId ==="0x89"){
+                    setAccount( account)
+                   }
+                   else{
+
+                    const resolvedENSname= await provider?.lookupAddress(account);
+                   
+                    const resolvedENSAvater= await provider?.getAvatar(resolvedENSname ) 
+                    
+                    setENSName(resolvedENSname)
+                    setENSAvater(resolvedENSAvater)
+                    setAccount( account)
+             
+                   }
+                 
+                  
+                   
+
+                   }catch(error){
+                     if(error.code === 4001) {
+                        // EIP-1193 userRejectedRequest error
+                        // If this happens, the user rejected the connection request.
+                       //  console.log('metamask did not connect');
+                      } else {
+                        console.error(error);
+                     }
+                 }
+             }
+
+
+
+
+````
+
+
+
+
+
+
+
+###   Direct video messenger or chats -XMTP pr0tocol and Livepeer player
 
   XMTP (Extensible Message Transport Protocol) is an open protocol, network, and standards for secure, private web3 messaging.
   
