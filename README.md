@@ -230,7 +230,12 @@ Source code:
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.01.11%20AM.png?alt=media&token=22b3315f-c70e-4586-9b5e-e2fdda9e2c60)
 
 
-Livestreaming - Livepeer and Huddle sdk
+#### Livestreaming - Livepeer,OBS and Huddle sdk
 
+Live videos or contents can be streamed on Everychain.
+The Livestreaming can be done either using OBS with livepeer or huddle sdk with livepeer.
+
+Source code: 
+ [Livestream studio file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/LivestreamsStudio/videoStream.js)
 
 
