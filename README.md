@@ -457,7 +457,7 @@ Source code:
                  }
                };
 
-           fetch(`https://api.nftport.xyz/v0/accounts/${account}?                chain=goerli&page_size=50&include=default&include=metadata&contract_address=0xbb01D6DA9D221609D102f413e5A444888798075c`, options)
+        fetch(`https://api.nftport.xyz/v0/accounts/${account}?            chain=goerli&page_size=50&include=default&include=metadata&contract_address=0xbb01D6DA9D221609D102f413e5A444888798075c`, options)
                 .then(response => response.json())
                 .then(response => {
 
@@ -482,6 +482,12 @@ Source code:
 
 
 ````
+
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.10.36%20AM.png?alt=media&token=6bd00c63-104d-4fe2-b54f-e00ed50a20fb)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.13.05%20AM.png?alt=media&token=0a8f013c-0192-44c4-b226-6bf1affd56b4)
+
 
 
 
