@@ -386,8 +386,18 @@ Source Code
     }, [peerMicTrack]);
 
 
-
-
-
 ````
+
+
+ 
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.13.33%20AM.png?alt=media&token=7f2394e1-0ba4-431b-8755-b1e4c95bf0d4)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.14.22%20AM.png?alt=media&token=ba3ac336-01dd-4e0a-b31d-349d15f0e62a)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.14.37%20AM.png?alt=media&token=7036a0df-d612-4973-86e4-d662557a8574)
+
+
+
+
+
 
