@@ -223,3 +223,10 @@ Source code:
 `````
 
 
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2010.56.34%20AM.png?alt=media&token=8c367cbc-6737-435e-8199-a2543971595f)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.00.14%20AM.png?alt=media&token=e10430b3-400a-4947-aa4d-f9b269e9bc93)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2011.01.11%20AM.png?alt=media&token=22b3315f-c70e-4586-9b5e-e2fdda9e2c60)
+
+
