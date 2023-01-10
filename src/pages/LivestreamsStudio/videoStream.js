@@ -131,7 +131,7 @@ export default function VideoStream({streamName, setStreamName,createStream, sta
             <h5>{"Samuel Mike"}</h5>
             <main className='flex items-center space-x-4 '>
                <h5 className='bg-green-600 rounded-full p-1'><CiMicrophoneOn className='text-lg' /></h5> 
-               <h5  className='bg-green-600 rounded-full p-1'> <CiVideoOn className='text-lg' /></h5>
+               <h5  className='bg-green-600 rounded-full p-1'  onClick={createHuddleLiveStream} > <CiVideoOn className='text-lg' /></h5>
                 <h5  className='bg-green-600 rounded-full p-1'>< AiOutlineDesktop  className='text-lg'/></h5>
             </main>
 
