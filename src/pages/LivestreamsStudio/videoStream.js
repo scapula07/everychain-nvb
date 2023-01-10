@@ -12,6 +12,7 @@ import { db } from '../../firebase';
 import { AccountState,EnsNameState } from '../../recoil/globalState'
 import { useRecoilValue } from 'recoil'
 import toast, { Toast } from 'react-hot-toast'
+import { huddleClient } from '../../huddleutil'
 
  function HostScreen() {
   return (
@@ -77,6 +78,18 @@ export default function VideoStream({streamName, setStreamName,createStream, sta
        setThumbnail("")
        setStreamName("")
     }
+    
+        const createHuddleLiveStream=async ()=>{
+         
+             huddleClient.startLiveStreaming({
+            platform: 'livepeer',
+            streamObj: {
+              streamLink: "rtmp://rtmp.livepeer.com/live",
+              streamKey: stream.streamKey,
+              streamName: stream.name
+            }
+             })
+        }
   return ( 
     <>
     <div>
