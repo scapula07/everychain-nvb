@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Everychain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Everychain is a social onboarding platform for blockchain educators,communities,bootcamps and content creators.
 
-## Available Scripts
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2010.53.17%20AM.png?alt=media&token=88bdd4c8-0bd6-4d70-b120-afa1400257a5)
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Project description
+1. Technologies
+1. Dapp Architecture and features
+1. Details on implementation of hackathon challanges 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Dapp architecture /Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Our dapp include the following features;
 
-### `npm run build`
+1. Ethereum naming service integration - ENS service
+2. Direct video messenger or chats -XMTP pr0tocol and Livepeer player
+3. Video streaming -Livepeer,Arweave and Bundlr
+4. Livestreaming - Livepeer and Huddle sdk
+5. Community chat rooms or group messaging( Discord clone) - Streamr protocol
+6. Video conferencing - Huddle sdk
+7. NFT gated access -NFTport API
+8. Notification messaging - Push protcol
+9. Lens protocol integration -Lens protocol
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Details on implementation of hackathon challanges 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+####   Direct video messenger or chats -XMTP pr0tocol and Livepeer player
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  XMTP (Extensible Message Transport Protocol) is an open protocol, network, and standards for secure, private web3 messaging.
+  
+  Source code:
+  1. [Messenger folder](https://github.com/scapula07/everychain-nvb/tree/master/src/pages/Messenger)
+  2. 
