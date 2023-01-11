@@ -39,6 +39,12 @@ The platform will act as a platform for content creators , Ecommerce for tech en
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.09.29%20AM.png?alt=media&token=df2f93b0-d9d7-4b81-b990-052a29655bfa)
 
 
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.09.29%20AM.png?alt=media&token=df2f93b0-d9d7-4b81-b990-052a29655bfa)
+
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.10.00%20AM.png?alt=media&token=57d61d1a-8726-4fd3-bd27-a73214f58e06)
+
+
 
 
 
