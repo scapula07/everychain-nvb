@@ -13,6 +13,40 @@ Everychain is a social onboarding platform for blockchain educators,communities,
 1. Details on implementation of hackathon challanges 
 
 
+### Project description
+
+Everychain was built with the sole intention of been the one ecosystem for blockchain learning and connecting.
+The platform will act as a platform for content creators , Ecommerce for tech entrepreneur and educator.
+
+
+
+##### Keynotes 
+
+1. Everychain runs a reward contract that incentivize the creators of contents uploaded on our platform. 
+1. Blockchain instructors can offer their service to students ready to get into the blockchain space.
+1. Community Bootcamps can onboard and offer live classes or video conferencing on Everychain too.
+1. Learning can be sold on our platform with Crypto payment gateway enabled.
+
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.08.04%20AM.png?alt=media&token=71de837b-e4ff-451e-b77d-f2c264a3cfef)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.08.14%20AM.png?alt=media&token=4b03cba4-b6c0-4fb3-b5f8-24eb6a3d2252)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.08.48%20AM.png?alt=media&token=17d77be9-9626-4f9c-97bc-0b5328f630d9)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.09.05%20AM.png?alt=media&token=bb88ae30-1955-4a52-9572-0c56785dbb86)
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/newshot%2FScreen%20Shot%202023-01-10%20at%2011.09.29%20AM.png?alt=media&token=df2f93b0-d9d7-4b81-b990-052a29655bfa)
+
+
+
+
+
+
+
+
+
+
 ### Dapp architecture /Features
 
 Our dapp include the following features;
