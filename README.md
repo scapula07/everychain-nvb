@@ -2,7 +2,14 @@
 
 Everychain is a social onboarding platform for blockchain educators,communities,bootcamps and content creators.
 
+
+
+
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%2010.53.17%20AM.png?alt=media&token=c6f41b19-9a42-4219-8700-1bd0fdf73174)
+
+
+
+
 
 
 ## Table of contents
@@ -53,6 +60,8 @@ The platform will act as a platform for content creators , Ecommerce for tech en
 
 
 
+
+
 ### Dapp architecture /Features
 
 Our dapp include the following features;
@@ -67,7 +76,12 @@ Our dapp include the following features;
 8. Notification messaging - Push protcol
 9. Lens protocol integration -Lens protocol
 
+
+
+
 ### Details on implementation of hackathon challanges 
+
+
 
 
 ###   Integration of ENS service
