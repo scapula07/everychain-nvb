@@ -632,8 +632,31 @@ Every user on Everychain can recieve notifications from delegates party on the p
 
 
 
+Source code:
+1.   [notificatyion file](https://github.com/scapula07/everychain-nvb/blob/master/src/pages/Notification/index.js)
+
+````js
+        import * as PushAPI from "@pushprotocol/restapi";
+        
+        useEffect(()=>{
+        const receiveNotification=async()=>{
+            const notifications = await PushAPI.user.getFeeds({
+                user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // user address in CAIP
+                env: 'staging'
+              });
+    
+              setNotifications(notifications )
+    
+        }
+        receiveNotification()
+
+    },[])
 
 
+
+
+
+`````
 
 
 
