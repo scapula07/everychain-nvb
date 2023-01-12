@@ -619,7 +619,19 @@ Source code:
 
 
 
-### Notification messaging - Push protcol
+
+
+### Notification messaging - Push protocol 
+
+Every user on Everychain can recieve notifications from delegates party on the platform. Communities on Everychain can seek to be a delegate thus can send Notifications.
+
+
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-12%20at%2012.07.56%20PM.png?alt=media&token=755f8aa9-7abf-42d9-a9b7-e1cdc3550e82)
+
+
+
+
+
 
 
 
