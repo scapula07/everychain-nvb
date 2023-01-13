@@ -681,6 +681,11 @@ Source code:
 Our subgraph indexed data of videos uplaoded on our platform.
 
 
+![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/telemed%2FScreen%20Shot%202023-01-13%20at%2011.55.37%20AM.png?alt=media&token=a155b0c3-89a9-446f-8bf3-d4a5f8c95ab9)
+
+
+
+
   solidity contract code
 ````sol
 
