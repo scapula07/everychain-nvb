@@ -680,6 +680,8 @@ Source code:
 
 Our subgraph indexed data of videos uplaoded on our platform.
 
+
+  solidity contract code
 ````sol
 
      //SPDX-License-Identifier: MIT
@@ -775,17 +777,76 @@ Our subgraph indexed data of videos uplaoded on our platform.
           emit CommentAdded(_text,_user);
 
     }
+    }
+````
 
 
- 
-
-
-
+````gql
+   type CommentAdded @entity(immutable: true) {
+  id: Bytes!
+  text: String! # string
+  user: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
 }
 
+type VideoUploaded @entity(immutable: true) {
+  id: Bytes!
+  assetId: String! # string
+  title: String! # string
+  videoUrl: String! # string
+  description: String! # string
+  creator: Bytes! # address
+  views: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+````
 
 
 
+````ts
+
+          import {
+        CommentAdded as CommentAddedEvent,
+        VideoUploaded as VideoUploadedEvent
+      } from "../generated/EveryChainVids/EveryChainVids"
+      import { CommentAdded, VideoUploaded } from "../generated/schema"
+
+      export function handleCommentAdded(event: CommentAddedEvent): void {
+        let entity = new CommentAdded(
+          event.transaction.hash.concatI32(event.logIndex.toI32())
+        )
+        entity.text = event.params.text
+        entity.user = event.params.user
+
+        entity.blockNumber = event.block.number
+        entity.blockTimestamp = event.block.timestamp
+        entity.transactionHash = event.transaction.hash
+
+        entity.save()
+      }
+
+      export function handleVideoUploaded(event: VideoUploadedEvent): void {
+        let entity = new VideoUploaded(
+          event.transaction.hash.concatI32(event.logIndex.toI32())
+        )
+        entity.assetId = event.params.assetId
+        entity.title = event.params.title
+        entity.videoUrl = event.params.videoUrl
+        entity.description = event.params.description
+        entity.creator = event.params.creator
+        entity.views = event.params.views
+
+        entity.blockNumber = event.block.number
+        entity.blockTimestamp = event.block.timestamp
+        entity.transactionHash = event.transaction.hash
+
+        entity.save()
+      }
 
 
 
