@@ -75,7 +75,7 @@ Our dapp include the following features;
 7. NFT gated access -NFTport API
 8. Notification messaging - Push protcol
 9. Lens protocol integration -Lens protocol
-
+10. Everychain subgraph - TheGraph
 
 
 
@@ -411,6 +411,15 @@ Source code:
 
 ![openpoll](https://firebasestorage.googleapis.com/v0/b/scapula-57ce3.appspot.com/o/screenshots%2FScreen%20Shot%202023-01-10%20at%201.37.42%20PM.png?alt=media&token=b2f2ffe6-6d20-4aa5-924c-a2c28c2e09ad)
 
+
+### Community chat rooms or group messaging( Discord clone) - Streamr protocol
+
+
+
+
+
+
+
 ###  Video conferencing - Huddle sdk
 
 Huddle sdk is use to implement the video conferencing feature in our community chat rooms.
@@ -659,9 +668,130 @@ Source code:
 `````
 
 
+10. Everychain subgraph - TheGraph
+
+
 
 
 ### Lens protocol integration -Lens protocol
+
+
+### Everychain subgraph - TheGraph
+
+Our subgraph indexed data of videos uplaoded on our platform.
+
+````sol
+
+     //SPDX-License-Identifier: MIT
+       pragma solidity >=0.7.0 <0.9.0;
+       pragma abicoder v2;
+
+
+
+    contract EveryChainVids{
+      
+        uint public videoCount=0;
+        string public name="Scapula videos";
+
+   struct Video{
+        string assetId;
+        string title;
+        string videoUrl;
+        string description;
+        address creator;
+        uint views;
+      
+
+    }
+
+
+
+     event VideoUploaded(
+        string assetId,
+        string title,
+        string videoUrl,
+        string description,
+        address creator,
+        uint views
+
+   );
+
+
+      struct Comment {
+        string text;
+        address user;
+    }
+   
+
+    
+     event CommentAdded(
+         string text,
+         address user
+
+   );
+
+
+  
+
+      mapping(bytes32 => Video) public videos;
+      mapping(bytes32 => Comment) comments;
+
+
+    function uploadVideo(bytes32 _hash,string memory _assetId,  string memory _title, string memory  _videoUrl,string memory _description ) public {
+
+            require(bytes( _assetId).length > 0);
+        
+            require(bytes(_title).length > 0);
+        
+            require(msg.sender!=address(0));
+
+        
+            videoCount ++;
+
+            // Add video to the contract
+           
+
+            videos[ _hash] = Video(_assetId,_title,_videoUrl,_description, msg.sender,0);
+            // Trigger an event
+            emit VideoUploaded(_assetId,_title,_videoUrl, _description, msg.sender,0);
+  }
+
+
+  function updateViews(bytes32 _hash) public {
+        
+        require(_hash != 0x0);
+        videos[_hash].views += 1;
+
+    }
+
+
+       function addComment(bytes32 _hash,address _user,string memory _text) public {
+          require(_hash != 0x0);
+          require(_user != address(0));
+          require(bytes(_text).length > 0);
+    //     videos[_hash].comments[_user] = Comment(_text, _user);
+           comments[_hash] = Comment(_text,_user);
+            // Trigger an event
+          emit CommentAdded(_text,_user);
+
+    }
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+````
+
+
 
 
 
